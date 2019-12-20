@@ -1,0 +1,9 @@
+---
+name: '2020'
+locale: es
+type: learning
+beta: false
+language: text
+id_format: "%05d"
+order: []
+private: false
