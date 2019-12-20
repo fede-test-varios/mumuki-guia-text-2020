@@ -223,3 +223,174 @@
     <option value="13">M</option>
   </select>
   
+  <div class="wrapper typo">This is a custom
+  <div class="list"><span class="placeholder">select</span>
+    <ul class="list__ul">
+      <li><a href="">select</a></li>
+      <li><a href="">lorem</a></li>
+      <li><a href="">ipsum</a></li>
+      <li><a href="">dolor</a></li>
+      <li><a href="">sit</a></li>
+      <li><a href="">amet</a></li>
+    </ul>
+  </div>
+  <!--
+  .select
+    select.typo
+      - each item in ['lorem', 'ipsum', 'dolor', 'sit', 'amet']
+        option.typo 
+  -->
+</div>
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
+
+$dark: #555;
+$color--primary: hsla(269, 100%, 50%, 1);
+
+body {
+}
+
+.typo {
+  font-size: 60px;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: #585858;
+  text-decoration: none;
+  option {
+    font-size: 30px;
+  }
+}
+
+.transition {
+  transition: all 0.4s ease-in-out;
+}
+
+body {
+  text-align: center;
+}
+
+.wrapper {
+  padding-top: 150px;
+  height: 100vh;
+  font-size: 60px;
+}
+
+.list {
+  display: inline-block;
+  position: relative;
+  //border: 1px solid red;
+  margin-left: 6px;
+  ul {
+    text-align: left;
+    position: absolute;
+    padding: 0;
+    top: 0;
+    left: 0;
+    display: none;
+    .active {
+      display: block;
+    }
+  }
+  li {
+    list-style: none;
+    &:first-child a {
+      color: desaturate($color--primary, 50%);
+    }
+  }
+  a {
+    @extend .typo;
+    transition: all 0.4s;
+    color: $color--primary;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      height: 5px;
+      width: 0;
+      left: 0;
+      background: lighten($color--primary, 20%);
+      bottom: 0;
+      transition: all 0.4s ease-out;
+    }
+    &:hover {
+      cursor: pointer;
+      color: lighten($color--primary, 20%);
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+select {
+  display: inline;
+  border: 0;
+  width: auto;
+  margin-left: 10px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-bottom: 2px solid $dark;
+  color: $color--primary;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  option {
+    border: 0;
+    border-bottom: 1px solid $dark;
+    padding: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+
+.placeholder {
+  //visibility: hidden;
+  //position: fixed;
+  border-bottom: 4px solid;
+  cursor: pointer;
+  &:hover {
+    color: lighten($dark, 20%);
+  }
+}
+
+</style>
+<script>
+  console.clear();
+
+var el = {};
+
+$('.placeholder').on('click', function (ev) {
+  $('.placeholder').css('opacity', '0');
+  $('.list__ul').toggle();
+});
+
+ $('.list__ul a').on('click', function (ev) {
+   ev.preventDefault();
+   var index = $(this).parent().index();
+   
+   $('.placeholder').text( $(this).text() ).css('opacity', '1');
+   
+   console.log($('.list__ul').find('li').eq(index).html());
+   
+   $('.list__ul').find('li').eq(index).prependTo('.list__ul');
+   $('.list__ul').toggle();   
+   
+ });
+
+
+$('select').on('change', function (e) {
+  
+  // Set text on placeholder hidden element
+  $('.placeholder').text(this.value);
+  
+  // Animate select width as placeholder
+  $(this).animate({width: $('.placeholder').width() + 'px' });
+  
+});
+
+
+</script>
