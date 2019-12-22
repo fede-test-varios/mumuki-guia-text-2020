@@ -6,7 +6,7 @@
 - name: Segunda opcion
   keys: 
     opcion2:
-      equal: 5
+      equal: 6
       
 - name: Tercera opcion
   keys: 
@@ -41,12 +41,12 @@
 - name: Novena opcion
   keys: 
     opcion9:
-      equal: 2
+      equal: 6
       
 - name: Decima opcion
   keys: 
     opcion10:
-      equal: 6
+      equal: 2
       
 - name: Onceava opcion
   keys: 
