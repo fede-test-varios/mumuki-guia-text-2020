@@ -1,1 +1,9 @@
-Completar
+- name: Primer opcion
+  keys: opcion1
+    ip_address: 
+      match: G
+      
+- name: Segunda opcion
+  keys: opcion2
+    ip_address: 
+      match: F
