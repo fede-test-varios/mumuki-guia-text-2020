@@ -1,9 +1,69 @@
-- name: Primer opcion
+- name: Primera opcion
   keys: opcion1
     ip_address: 
-      match: G
+      match: 9
       
 - name: Segunda opcion
   keys: opcion2
     ip_address: 
-      match: F
+      match: 5
+      
+- name: Tercera opcion
+  keys: opcion3
+    ip_address: 
+      match: 7
+      
+- name: Cuarta opcion
+  keys: opcion4
+    ip_address: 
+      match: 10
+      
+- name: Quinta opcion
+  keys: opcion5
+    ip_address: 
+      match: 0
+      
+- name: Sexta opcion
+  keys: opcion6
+    ip_address: 
+      match: 12
+      
+- name: Septima opcion
+  keys: opcion7
+    ip_address: 
+      match: 4
+      
+- name: Octava opcion
+  keys: opcion8
+    ip_address: 
+      match: 11
+      
+- name: Novena opcion
+  keys: opcion9
+    ip_address: 
+      match: 2
+      
+- name: Decima opcion
+  keys: opcion10
+    ip_address: 
+      match: 6
+      
+- name: Onceava opcion
+  keys: opcion11
+    ip_address: 
+      match: 3
+      
+- name: Doceava opcion
+  keys: opcion12
+    ip_address: 
+      match: 13
+      
+- name: Treceava opcion
+  keys: opcion13
+    ip_address: 
+      match: 1
+      
+- name: Catorceava opcion
+  keys: opcion14
+    ip_address: 
+      match: 8
