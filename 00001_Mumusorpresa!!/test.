@@ -1,4 +1,4 @@
 - name: Contraseña
   keys: 
-    password:
+    respuesta:
       equal: jkldajdoiahaas
