@@ -41,7 +41,7 @@
 - name: Novena opcion
   keys: 
     opcion9:
-      equal: 6
+      equal: 5
       
 - name: Decima opcion
   keys: 
